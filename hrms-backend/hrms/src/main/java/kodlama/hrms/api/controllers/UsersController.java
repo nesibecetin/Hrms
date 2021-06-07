@@ -15,6 +15,7 @@ import kodlama.hrms.business.abstracts.UserService;
 import kodlama.hrms.core.entities.User;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 
 @RestController
 @RequestMapping("/api/users/")
@@ -36,6 +37,11 @@ public class UsersController {
 	@GetMapping("getall")
 	public DataResult<List<User>> getAll(){
 		return this.userService.getAll();
+	}
+	@GetMapping("getbyemail")
+	public DataResult<User> getByEmail(String email) {
+		// TODO Auto-generated method stub
+		return this.userService.getByEmail(email);
 	}
 	
 	

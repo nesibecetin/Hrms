@@ -38,5 +38,10 @@ public class CandidatesController {
 	public Result add(@Valid @RequestBody Candidate candidate) {
 		return this.candidateService.add(candidate);
 	}
+	
+	@GetMapping("getbyidentitynumber")
+	public DataResult<Candidate> getByIdentityNumber(String identityNumber){
+		return this.candidateService.getByIdentityNumber(identityNumber);
+	}
 
 }

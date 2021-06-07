@@ -35,4 +35,10 @@ public class UserManager implements UserService {
 		return new SuccessDataResult<List<User>>(this.userDao.findAll(),"Listelendi.");
 	}
 
+	@Override
+	public DataResult<User> getByEmail(String email) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<User>(this.userDao.getByEmail(email));
+	}
+
 }

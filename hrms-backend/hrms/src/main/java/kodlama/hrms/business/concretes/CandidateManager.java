@@ -37,5 +37,11 @@ public class CandidateManager implements CandidateService {
 		this.candidateDao.save(candidate);
 		return new SuccessResult("eklendi.");
 	}
+
+	@Override
+	public DataResult<Candidate> getByIdentityNumber(String identityNumber) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<Candidate>(this.candidateDao.getByIdentityNumber(identityNumber));
+	}
 	
 }
