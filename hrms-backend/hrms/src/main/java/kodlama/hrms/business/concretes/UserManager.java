@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import kodlama.hrms.business.abstracts.UserService;
 import kodlama.hrms.core.entities.User;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
+import kodlama.hrms.core.utilities.results.SuccessResult;
 import kodlama.hrms.dataAccess.abstracts.UserDao;
 
 @Service
@@ -20,15 +24,15 @@ public class UserManager implements UserService {
 	}
 
 	@Override
-	public User add(User user) {
-		// TODO Auto-generated method stub
-		return this.userDao.save(user);
+	public Result add(User user) {
+		this.userDao.save(user);
+		return new SuccessResult("eklendi.");
 	}
 
 	@Override
-	public List<User> getAll() {
-		// TODO Auto-generated method stub
-		return this.userDao.findAll();
+	public DataResult<List<User>> getAll() {
+		
+		return new SuccessDataResult<List<User>>(this.userDao.findAll(),"Listelendi.");
 	}
 
 }

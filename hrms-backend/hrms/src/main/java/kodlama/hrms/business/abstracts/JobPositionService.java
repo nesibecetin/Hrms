@@ -2,9 +2,10 @@ package kodlama.hrms.business.abstracts;
 
 import java.util.List;
 
+import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.entities.concretes.JobPosition;
 
 public interface JobPositionService {
-	List<JobPosition> getAll();
+	DataResult<List<JobPosition>> getAll();
 
 }

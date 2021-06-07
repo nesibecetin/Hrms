@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.hrms.business.abstracts.UserService;
 import kodlama.hrms.core.entities.User;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
 
 @RestController
 @RequestMapping("/api/users/")
@@ -27,12 +29,12 @@ public class UsersController {
 	}
 	
 	@PostMapping("add")
-	public User add(@Valid @RequestBody User user) {
+	public Result add(@Valid @RequestBody User user) {
 		return this.userService.add(user);
 	}
 	
 	@GetMapping("getall")
-	public List<User> getAll(){
+	public DataResult<List<User>> getAll(){
 		return this.userService.getAll();
 	}
 	

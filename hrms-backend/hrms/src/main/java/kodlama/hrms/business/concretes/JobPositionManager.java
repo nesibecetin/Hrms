@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlama.hrms.business.abstracts.JobPositionService;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.dataAccess.abstracts.JobPositionDao;
 import kodlama.hrms.entities.concretes.JobPosition;
 
@@ -19,9 +21,9 @@ public class JobPositionManager implements JobPositionService{
 		this.jobPositionDao = jobPositionDao;
 	}
 	@Override
-	public List<JobPosition> getAll() {
-		// TODO Auto-generated method stub
-		return this.jobPositionDao.findAll();
+	public DataResult<List<JobPosition>> getAll() {
+
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(),"Listelendi.");
 	}
 
 }

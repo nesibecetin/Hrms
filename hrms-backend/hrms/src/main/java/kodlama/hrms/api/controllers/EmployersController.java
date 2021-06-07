@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.hrms.business.abstracts.EmployerService;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
 import kodlama.hrms.entities.concretes.Employer;
 
 @RestController
@@ -27,13 +29,13 @@ public class EmployersController {
 	}
 	
 	@GetMapping("getall")
-	public List<Employer> getAll(){
+	public DataResult<List<Employer>> getAll(){
 		return this.employerService.getAll();	 
 		
 	}
 	
 	@PostMapping("add")
-	public Employer add(@Valid @RequestBody Employer employer) {
+	public Result add(@Valid @RequestBody Employer employer) {
 		return this.employerService.add(employer);
 	}
 	

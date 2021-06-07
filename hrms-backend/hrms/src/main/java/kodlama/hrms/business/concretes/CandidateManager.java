@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlama.hrms.business.abstracts.CandidateService;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
+import kodlama.hrms.core.utilities.results.SuccessResult;
 import kodlama.hrms.dataAccess.abstracts.CandidateDao;
 import kodlama.hrms.entities.concretes.Candidate;
 
@@ -21,15 +25,17 @@ public class CandidateManager implements CandidateService {
 	}
 
 	@Override
-	public List<Candidate> getAll() {
-		// TODO Auto-generated method stub
-		return this.candidateDao.findAll();
+	public DataResult<List<Candidate>> getAll() {
+		
+		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"Listelendi.");
+				
 	}
 
 	@Override
-	public Candidate add(Candidate candidate) {
-		// TODO Auto-generated method stub
-		return this.candidateDao.save(candidate);
+	public Result add(Candidate candidate) {
+		
+		this.candidateDao.save(candidate);
+		return new SuccessResult("eklendi.");
 	}
 	
 }

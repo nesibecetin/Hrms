@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.hrms.business.abstracts.CandidateService;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
 import kodlama.hrms.entities.concretes.Candidate;
 
 
@@ -28,12 +30,12 @@ public class CandidatesController {
 	}
 	
 	@GetMapping("getall")
-	public List<Candidate> getAll(){
+	public DataResult<List<Candidate>> getAll(){
 		return this.candidateService.getAll();
 	}
 	
 	@PostMapping("add")
-	public Candidate add(@Valid @RequestBody Candidate candidate) {
+	public Result add(@Valid @RequestBody Candidate candidate) {
 		return this.candidateService.add(candidate);
 	}
 

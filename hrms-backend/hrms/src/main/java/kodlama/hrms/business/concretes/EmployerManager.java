@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlama.hrms.business.abstracts.EmployerService;
+import kodlama.hrms.core.utilities.results.DataResult;
+import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
+import kodlama.hrms.core.utilities.results.SuccessResult;
 import kodlama.hrms.dataAccess.abstracts.EmployerDao;
 import kodlama.hrms.entities.concretes.Employer;
 
@@ -21,16 +25,17 @@ public class EmployerManager implements EmployerService{
 	}
 
 	@Override
-	public List<Employer> getAll() {
-		// TODO Auto-generated method stub
+	public DataResult<List<Employer>> getAll() {
 		
-		return this.employerDao.findAll();
+		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(),"Listelendi.");
+				
 	}
 
 	@Override
-	public Employer add(Employer employer) {
-		// TODO Auto-generated method stub
-		return this.employerDao.save(employer);
+	public Result add(Employer employer) {
+		
+		this.employerDao.save(employer);
+		return new SuccessResult("eklendi.");
 	}
 
 }
