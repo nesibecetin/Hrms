@@ -1,6 +1,7 @@
 package kodlama.hrms.entities.concretes;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,14 +27,14 @@ public class JobAdvertisement {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="city_id")
-	private int cityId;
+//	@Column(name="city_id")
+//	private int cityId;
 
 	@Column(name="description")
 	private String description;
 	
-	@Column(name="position_id")
-	private int positionId;
+//	@Column(name="position_id")
+//	private int positionId;
 	
 	@Column(name="min")
 	private String min;
@@ -53,17 +54,20 @@ public class JobAdvertisement {
 	@Column(name="end_date")
 	private Date endDate;
 	
-	@Column(name="employer_id")
-	private int employerId;
+//	@Column(name="employer_id")
+//	private int employerId;
 	
-//	
-//	@ManyToOne
-//	@JoinColumn(name = "city_id")
-//	private City city;
-//	
-//	@ManyToOne
-//	@JoinColumn(name="position_id")
-//	private JobPosition jobPosition;
+	@ManyToOne
+	@JoinColumn(name = "employer_id")
+	private Employer employer;
+	
+	@ManyToOne
+	@JoinColumn(name = "city_id")
+	private City city;
+	
+	@ManyToOne
+	@JoinColumn(name="position_id")
+	private JobPosition jobPosition;
 	
 
 }

@@ -1,5 +1,7 @@
 package kodlama.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="cities")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handle","jobAdvertisement"})
 public class City {
 	
 	@Id
@@ -28,5 +31,8 @@ public class City {
 	
 	@Column(name="name")
 	private String name;
+	
+	@OneToMany(mappedBy = "city")
+	private List<JobAdvertisement> jobAdvertisement;
 
 }
