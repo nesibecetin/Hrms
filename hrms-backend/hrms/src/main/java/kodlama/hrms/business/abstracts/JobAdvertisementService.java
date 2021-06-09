@@ -13,4 +13,5 @@ public interface JobAdvertisementService {
 	Result add(JobAdvertisement jobAdvertisement);
 	DataResult<List<JobAdvertisementDto>> getAllByIsActiveAndCompanyName(String companyName);
 	DataResult<List<JobAdvertisementDto>> getAllByIsActiveAndEndDateDesc();
+	Result closeActiceAdvertisement(int id);
 }
