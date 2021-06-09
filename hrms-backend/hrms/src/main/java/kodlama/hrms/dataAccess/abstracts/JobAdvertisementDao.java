@@ -14,5 +14,12 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
 	
 	@Query("Select new kodlama.hrms.entities.dtos.JobAdvertisementDto(e.companyName,p.name, j.numberOfPerson, j.startedDate, j.endDate) From JobAdvertisement j Inner Join j.employer e Inner join j.jobPosition p where j.isActive=true ")
 	List<JobAdvertisementDto> getAllByIsActive();
+	
+	@Query("Select new kodlama.hrms.entities.dtos.JobAdvertisementDto(e.companyName,p.name, j.numberOfPerson, j.startedDate, j.endDate) From JobAdvertisement j Inner Join j.employer e Inner join j.jobPosition p where e.companyName = :companyName and j.isActive=true")
+	List<JobAdvertisementDto> getAllByIsActiveAndCompanyName(String companyName);
+	
+	@Query("Select new kodlama.hrms.entities.dtos.JobAdvertisementDto(e.companyName,p.name, j.numberOfPerson, j.startedDate, j.endDate) From JobAdvertisement j Inner Join j.employer e Inner join j.jobPosition p where j.isActive=true order by j.endDate DESC ")
+	List<JobAdvertisementDto> getAllByIsActiveAndEndDateDesc();
+	
 
 }
