@@ -61,5 +61,9 @@ public class Candidate extends User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidates")
 	private List<ProgramingSkill> programingSkill;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidates")
+	private List<Language> language;
 
 }
