@@ -1,11 +1,16 @@
 package kodlama.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import kodlama.hrms.core.entities.User;
 import lombok.AllArgsConstructor;
@@ -40,5 +45,12 @@ public class Candidate extends User {
 	@NotNull(message = "identity number may not be blank")
 	@Column(name="identity_number")
 	private String identityNumber;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidates")
+	private List<WorkExperience> workExperiences;
+	
+	@OneToMany(mappedBy = "candidates")
+	private List<SocialLink> socialLink;
 
 }
