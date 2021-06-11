@@ -33,5 +33,10 @@ public class CoverLettersController {
 	public Result add(@RequestBody CoverLetter coverLetter) {
 		return this.coverLetterService.add(coverLetter);
 	}
+	@GetMapping("/getallbycandidateid")
+	public DataResult<List<CoverLetter>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return this.coverLetterService.getAllByCandidateId(id);
+	}
 
 }

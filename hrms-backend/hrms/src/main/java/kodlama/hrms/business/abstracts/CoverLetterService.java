@@ -9,5 +9,6 @@ import kodlama.hrms.entities.concretes.CoverLetter;
 public interface CoverLetterService {
 	Result add(CoverLetter coverLetter);
 	DataResult<List<CoverLetter>> getAll();
+	DataResult<List<CoverLetter>> getAllByCandidateId(int id);
 
 }

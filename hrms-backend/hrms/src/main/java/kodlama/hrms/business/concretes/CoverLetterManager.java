@@ -35,4 +35,10 @@ public class CoverLetterManager implements CoverLetterService {
 		return new SuccessDataResult<List<CoverLetter>>(this.coverLetterDao.findAll(),"listelendi.");
 	}
 
+	@Override
+	public DataResult<List<CoverLetter>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<CoverLetter>>(this.coverLetterDao.getAllByCandidateId(id),"listelendi.");
+	}
+
 }
