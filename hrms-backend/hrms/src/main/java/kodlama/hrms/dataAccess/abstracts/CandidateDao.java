@@ -7,4 +7,5 @@ import kodlama.hrms.entities.concretes.Candidate;
 public interface CandidateDao extends JpaRepository<Candidate,Integer>{
 
 	Candidate getByIdentityNumber(String identityNumber);
+	Candidate getAllById(int id);
 }

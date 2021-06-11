@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.CandidateService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.Candidate;
+import kodlama.hrms.entities.dtos.ResumeDto;
 
 
 @RestController
@@ -42,6 +44,16 @@ public class CandidatesController {
 	@GetMapping("getbyidentitynumber")
 	public DataResult<Candidate> getByIdentityNumber(String identityNumber){
 		return this.candidateService.getByIdentityNumber(identityNumber);
+	}
+	
+	@GetMapping("getbyid")
+	public DataResult<Candidate> getById(int id){
+		return this.candidateService.getById(id);
+	}
+	
+	@GetMapping("getresumebycandidateid")
+	public DataResult<ResumeDto> getByResumeCandidateId(int id){
+		return this.candidateService.getByResumeCandidateId(id);
 	}
 
 }
