@@ -32,5 +32,10 @@ public class WorkExperienceManager implements WorkExperienceService {
 		
 		return new SuccessDataResult<List<WorkExperience>>(this.workExperienceDao.findAll());
 	}
+	@Override
+	public DataResult<List<WorkExperience>> getAllByCandidateId(int id) {
+		
+		return new SuccessDataResult<List<WorkExperience>>(this.workExperienceDao.getAllByCandidateId(id));
+	}
 
 }

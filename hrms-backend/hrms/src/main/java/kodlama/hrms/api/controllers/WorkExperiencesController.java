@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.WorkExperienceService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.WorkExperience;
 
 @RequestMapping("/api/workexperience")
@@ -32,6 +33,11 @@ public class WorkExperiencesController {
 	@GetMapping("/getAll")
 	public DataResult<List<WorkExperience>> getAll(){
 		return this.workExperienceService.getAll();
+	}
+	@GetMapping("/getAllByCandidateId")
+	public DataResult<List<WorkExperience>> getAllByCandidateId(int id) {
+		
+		return this.workExperienceService.getAllByCandidateId(id);
 	}
 		
 
