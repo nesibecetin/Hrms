@@ -9,5 +9,6 @@ import kodlama.hrms.entities.concretes.ProgramingSkill;
 public interface ProgramingSkillService {
 	Result add(ProgramingSkill programingSkill);
 	DataResult<List<ProgramingSkill>> getAll();
+	DataResult<List<ProgramingSkill>> getAllByCandidateId(int id);
 
 }

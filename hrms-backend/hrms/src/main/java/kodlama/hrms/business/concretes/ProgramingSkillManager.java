@@ -34,4 +34,10 @@ public class ProgramingSkillManager implements ProgramingSkillService {
 		return new SuccessDataResult<List<ProgramingSkill>>(this.programingSkillDao.findAll(),"listelendi");
 	}
 
+	@Override
+	public DataResult<List<ProgramingSkill>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<ProgramingSkill>>(this.programingSkillDao.getAllByCandidateId(id),"listelendi");
+	}
+
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.ProgramingSkillService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.ProgramingSkill;
 
 @RequestMapping("/api/programingskill")
@@ -34,5 +35,11 @@ public class ProgramingSkillsController {
 	@PostMapping("/add")
 	public Result add(@RequestBody ProgramingSkill programingSkill) {
 		return this.programingSkillService.add(programingSkill);
+	}
+	
+	@GetMapping("/getallbycandidateid")
+	public DataResult<List<ProgramingSkill>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return this.programingSkillService.getAllByCandidateId(id);
 	}
 }
