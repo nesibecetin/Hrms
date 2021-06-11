@@ -34,4 +34,10 @@ public class LanguageManager implements LanguageService{
 		return new SuccessDataResult<List<Language>>(this.languageDao.findAll(),"listelendi.");
 	}
 
+	@Override
+	public DataResult<List<Language>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<Language>>(this.languageDao.getAllByCandidateId(id),"listelendi.");
+	}
+
 }

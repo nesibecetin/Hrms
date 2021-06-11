@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.LanguageService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.Language;
 
 @RequestMapping("/api/languages")
@@ -35,5 +36,11 @@ public class LanguagesController {
 	@PostMapping("/add")
 	public Result add(@Valid @RequestBody Language language) {
 		return this.languageService.add(language);
+	}
+	
+	@GetMapping("/getallbycandidateid")
+	public DataResult<List<Language>> getAllByCandidateId(int id) {
+		// TODO Auto-generated method stub
+		return this.languageService.getAllByCandidateId(id);
 	}
 }
