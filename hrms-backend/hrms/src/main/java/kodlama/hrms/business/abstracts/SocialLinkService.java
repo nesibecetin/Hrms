@@ -9,5 +9,6 @@ import kodlama.hrms.entities.concretes.SocialLink;
 public interface SocialLinkService {
 	Result add(SocialLink socialLink);
 	DataResult<List<SocialLink>> getAll();
+	DataResult<List<SocialLink>> getByCandidatesId(int candidateId);
 
 }

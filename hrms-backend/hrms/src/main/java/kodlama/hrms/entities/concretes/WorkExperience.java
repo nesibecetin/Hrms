@@ -40,7 +40,7 @@ public class WorkExperience {
 	
 	@ManyToOne()
 	@JoinColumn(name="candidate_id")
-	private Candidate candidates;
+	private Candidate candidate;
 	
 	
 

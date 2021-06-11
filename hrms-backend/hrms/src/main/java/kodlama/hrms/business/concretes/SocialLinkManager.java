@@ -35,4 +35,10 @@ public class SocialLinkManager implements SocialLinkService{
 		return new SuccessDataResult<List<SocialLink>>(this.socialLinkDao.findAll());
 	}
 
+	@Override
+	public DataResult<List<SocialLink>> getByCandidatesId(int candidateId) {
+		
+		return new SuccessDataResult<List<SocialLink>>(this.socialLinkDao.getAllByCandidateId(candidateId));
+	}
+
 }

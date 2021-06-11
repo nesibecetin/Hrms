@@ -47,27 +47,27 @@ public class Candidate extends User {
 	private String identityNumber;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<WorkExperience> workExperiences;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<SocialLink> socialLink;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<SchoolInfo> schoolInfo;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<ProgramingSkill> programingSkill;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<Language> language;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "candidates")
+	@OneToMany(mappedBy = "candidate")
 	private List<CoverLetter> coverLetter;
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.SocialLinkService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.SocialLink;
 
 @RestController
@@ -34,6 +35,11 @@ public class SocialLinksController {
 	@PostMapping("/add")
 	public Result add(@RequestBody SocialLink socialLink) {
 		return this.socialLinkService.add(socialLink);
+	}
+	@GetMapping("/getbycandidatesid")
+	public DataResult<List<SocialLink>> getByCandidatesId(int candidateId) {
+		
+		return this.socialLinkService.getByCandidatesId(candidateId);
 	}
 
 }

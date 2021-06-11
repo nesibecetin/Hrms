@@ -42,7 +42,7 @@ public class SchoolInfo {
 	
 	@ManyToOne
 	@JoinColumn(name="candidate_id")
-	private Candidate candidates;
+	private Candidate candidate;
 	
 	
 
