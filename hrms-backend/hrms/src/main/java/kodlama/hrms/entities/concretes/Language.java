@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +29,8 @@ public class Language {
 	@Column(name="name")
 	private String name;
 	
+	@Min(1)
+	@Max(5)
 	@Column(name="level")
 	private int level;
 	

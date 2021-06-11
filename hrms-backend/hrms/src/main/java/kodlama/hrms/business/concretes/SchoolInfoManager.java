@@ -35,4 +35,10 @@ public class SchoolInfoManager implements SchoolInfoService {
 		return new SuccessDataResult<List<SchoolInfo>>(this.schoolInfoDao.findAll());
 	}
 
+	@Override
+	public DataResult<List<SchoolInfo>> getAllByCandidateId(int id) {
+		
+		return new SuccessDataResult<List<SchoolInfo>>(this.schoolInfoDao.getAllByCandidateId(id));
+	}
+
 }

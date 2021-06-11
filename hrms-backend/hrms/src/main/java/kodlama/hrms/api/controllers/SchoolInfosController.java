@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.hrms.business.abstracts.SchoolInfoService;
 import kodlama.hrms.core.utilities.results.DataResult;
 import kodlama.hrms.core.utilities.results.Result;
+import kodlama.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.hrms.entities.concretes.SchoolInfo;
 
 @RestController
@@ -34,5 +35,11 @@ public class SchoolInfosController {
 	@PostMapping("/add")
 	public Result add(@RequestBody SchoolInfo schoolInfo) {
 		return this.schoolInfoService.add(schoolInfo);
+	}
+	
+	@GetMapping("/getallbycandidateid")
+	public DataResult<List<SchoolInfo>> getAllByCandidateId(int id) {
+		
+		return this.schoolInfoService.getAllByCandidateId(id);
 	}
 }
