@@ -16,6 +16,7 @@ import kodlama.hrms.entities.dtos.EmployerRegisterDto;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin
+
 public class AuthController {
 	private AuthService authService;
 
